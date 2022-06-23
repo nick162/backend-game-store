@@ -14,7 +14,7 @@ module.exports = {
   landingPage: async (req, res) => {
     try {
       const voucher = await Voucher.find()
-        .select('_id name status category thumbnail')
+        .select('status _id name category thumbnail')
         .populate('category')
 
       res.status(200).json({ data: voucher })
