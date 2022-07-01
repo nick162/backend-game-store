@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {landingPage, detailPage, category, checkout, history, historyDetail, dashboard, profile, editProfile } = require('./controller')
+const { editProfile, profile, dashboard, landingPage, detailPage, category, checkout, history, historyDetail } = require('./controller')
 const { isLoginPlayer } = require('../middleware/auth')
 const multer = require('multer')
 const os = require('os')
