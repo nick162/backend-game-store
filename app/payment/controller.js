@@ -9,7 +9,6 @@ module.exports = {
 
       const alert = { message: alertMessage, status: alertStatus }
       const payment = await Payment.find()
-        .select('name bankName noRekening')
         .populate('banks')
 
       res.render('admin/payment/view_payment', {
@@ -143,4 +142,6 @@ module.exports = {
       res.redirect('/payment')
     }
   }
+
+  
 }
