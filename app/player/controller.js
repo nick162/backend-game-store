@@ -32,6 +32,7 @@ module.exports = {
         .populate('category')
         .populate('nominals')
         .populate('user', '_id name phoneNumber')
+        .populate('payment')
 
       if (!voucher) {
         return res.status(404).json({ message: "voucher game tidak ditemukan.!" })
