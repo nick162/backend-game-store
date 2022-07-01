@@ -327,7 +327,7 @@ module.exports = {
   payment: async (req, res) => {
     try {
       const payment = await Payment.find()
-        .select("name bankName noRekening")
+        .select("name bankName noRekening type status")
         .populate("banks");
 
       res.status(200).json({ data: payment });
