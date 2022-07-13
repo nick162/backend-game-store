@@ -88,12 +88,12 @@ module.exports ={
 
         } else {
           res.status(403).json({
-            error: 'password yang anda masukan salah.'
+            message: 'password yang anda masukan salah.'
           })  
         }
       } else {
         res.status(403).json({
-          error: 'email yang anda masukan belum terdaftar.'
+          message: 'email yang anda masukan belum terdaftar.'
         })
       }
 
