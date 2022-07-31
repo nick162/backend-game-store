@@ -56,7 +56,7 @@ module.exports = {
       const { accountUser, name, nominal, voucher, payment, bank } = req.body;
 
       const res_voucher = await Voucher.findOne({ _id: voucher })
-        .select("name caegory _id thumbnail user")
+        .select("name category _id thumbnail user")
         .populate("category")
         .populate("user");
 
@@ -81,7 +81,7 @@ module.exports = {
         return res.status(404).json({ message: "payment tidak ditemukan." });
 
       let tax = (10 / 100) * res_nominal._doc.price;
-      let value = res_nominal._doc.price - tax;
+      let value = res_nominal._doc.price + tax;
 
       console.log("res_payment >>");
       console.log(res_payment._doc);
